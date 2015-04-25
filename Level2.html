@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <p><h1 id="heading" align = "center">Black And White</h1></p>
+
+    </head>
+
+<style>
+    #heading{
+        font-family:"Trebuchet MS", Helvetica, sans-serif;
+        font-size:40px;
+        font-weight:bold;
+    }
+	.container{
+        width: 350px;
+        background: url(square.png) no-repeat center top #000;
+        margin: 0 auto;
+        height: 350px;
+        background-color: #f8f8f8;
+        /*min-width: 350px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 25%;*/
+	}
+	.row{
+        margin-left: 10px;
+        position: relative;
+        margin-bottom: 2px;
+        bottom: -15px;
+	}
+	.cell{
+        display: inline;
+		margin-left: 2px;
+		margin-right: 2px;
+	}
+    .button{
+        margin-right: auto;
+        margin-left: auto;
+        padding: 5px;
+        background-color: #f7e9be;
+        border: 3px ;
+        color: #000000;
+
+        -moz-box-shadow: 0px 1px 0px 0px #1c1b18;
+        -webkit-box-shadow: 0px 1px 0px 0px #1c1b18;
+        box-shadow: 0px 1px 0px 0px #1c1b18;
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f7e9be), color-stop(1, #d9b77b));
+        background:-moz-linear-gradient(top, #f7e9be 5%, #d9b77b 100%);
+        background:-webkit-linear-gradient(top, #f7e9be 5%, #d9b77b 100%);
+        background:-o-linear-gradient(top, #f7e9be 5%, #d9b77b 100%);
+        background:-ms-linear-gradient(top, #f7e9be 5%, #d9b77b 100%);
+        background:linear-gradient(to bottom, #f7e9be 5%, #d9b77b 100%);
+        -moz-border-radius:15px;
+        -webkit-border-radius:15px;
+        border-radius:10px;
+        border:1px solid #333029;
+        display:inline-block;
+        color:#505739;
+        font-family:arial;
+        font-size:15px;
+        font-weight:bold;
+
+    }
+    #count {
+        text-align: center;
+    }
+    #menu{
+        width: 165px;
+    }
+    #reset{
+        width: 165px;
+    }
+    .buttonSet{
+        display: block;
+    }
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+</style>
+
+<body bgcolor="#f8f8f8">
+
+<h4 id = "count">Count: 0</h4>
+<div class="buttonSet" id="resetReturn" style="text-align:center">
+    <a href = "ChooseLevel.html">
+        <button class="button" id="menu">Menu</button>
+    </a>
+    <button class="button" id = "reset" onclick = "reset()">Reset</button>
+</div>
+<p></p>
+<div class = "container" id = "container">
+	<div class = "row">
+		<div class = "cell">
+			<img id="image1" onclick = "changeImage('image1', 'image2', 'image5')" src="Black.jpg" width="75" height="75">
+		</div>
+		<div class = "cell">
+			<img id="image2" onclick = "changeImage('image1', 'image2', 'image3', 'image6')" src="Black.jpg" width="75" height="75">
+		</div>
+		<div class = "cell">
+			<img id="image3" onclick = "changeImage('image2', 'image3', 'image4', 'image7')" src="Black.jpg" width="75" height="75">
+		</div>
+        <div class = "cell">
+            <img id="image4" onclick = "changeImage('image3', 'image4', 'image8')" src="Black.jpg" width="75" height="75">
+        </div>
+	</div>
+	<div class = "row">
+		<div class = "cell">
+			<img id="image5" onclick = "changeImage('image1', 'image5', 'image6', 'image9')" src="Black.jpg" width="75" height="75">
+		</div>
+		<div class = "cell">
+			<img id="image6" onclick = "changeImage('image2', 'image5', 'image6', 'image7', 'image10')" src="Black.jpg" width="75" height="75">
+		</div>
+        <div class = "cell">
+            <img id="image7" onclick = "changeImage('image3', 'image6', 'image7', 'image8', 'image11')" src="Black.jpg" width="75" height="75">
+        </div>
+        <div class = "cell">
+            <img id="image8" onclick = "changeImage('image4', 'image7', 'image8', 'image12')" src="Black.jpg" width="75" height="75">
+        </div>
+	</div>
+	<div class = "row">
+		<div class = "cell">
+			<img id="image9" onclick = "changeImage('image5', 'image13', 'image9', 'image10')" src="Black.jpg" width="75" height="75">
+		</div>
+        <div class = "cell">
+            <img id="image10" onclick = "changeImage('image6', 'image14', 'image9', 'image10', 'image11')" src="Black.jpg" width="75" height="75">
+        </div>
+        <div class = "cell">
+            <img id="image11" onclick = "changeImage('image7', 'image10', 'image11', 'image12', 'image15')" src="Black.jpg" width="75" height="75">
+        </div>
+        <div class = "cell">
+            <img id="image12" onclick = "changeImage('image16', 'image8', 'image11', 'image12')" src="Black.jpg" width="75" height="75">
+        </div>
+	</div>
+    <div class = "row">
+        <div class = "cell">
+            <img id="image13" onclick = "changeImage('image13', 'image14', 'image9')" src="Black.jpg" width="75" height="75">
+        </div>
+        <div class = "cell">
+            <img id="image14" onclick = "changeImage('image10', 'image13', 'image14', 'image15')" src="Black.jpg" width="75" height="75">
+        </div>
+        <div class = "cell">
+            <img id="image15" onclick = "changeImage('image11', 'image14', 'image15', 'image16')" src="Black.jpg" width="75" height="75">
+        </div>
+        <div class = "cell">
+            <img id="image16" onclick = "changeImage('image16', 'image12', 'image15')" src="Black.jpg" width="75" height="75">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var count = 0;
+
+function reset() {
+    image1.src = "Black.jpg";
+    image2.src = "Black.jpg";
+    image3.src = "Black.jpg";
+    image4.src = "Black.jpg";
+    image5.src = "Black.jpg";
+    image6.src = "Black.jpg";
+    image7.src = "Black.jpg";
+    image8.src = "Black.jpg";
+    image9.src = "Black.jpg";
+    image10.src = "Black.jpg";
+    image11.src = "Black.jpg";
+    image12.src = "Black.jpg";
+    image13.src = "Black.jpg";
+    image14.src = "Black.jpg";
+    image15.src = "Black.jpg";
+    image16.src = "Black.jpg";
+    count = 0;
+    var courtVar = document.getElementById('count');
+    courtVar.innerHTML = "Count: " + count;
+}
+
+function changeImage() {
+    var i = 0;
+    for (i = 0; i < arguments.length; i++){
+        var image = document.getElementById(arguments[i]);
+        if (image.src.match("White.jpg")) {
+            image.src = "Black.jpg";
+        } else {
+            image.src = "White.jpg";
+        }
+    }
+    checkWin();
+}
+function checkWin() {
+	var image1 = document.getElementById('image1');
+	var image2 = document.getElementById('image2');
+	var image3 = document.getElementById('image3');
+	var image4 = document.getElementById('image4');
+	var image5 = document.getElementById('image5');
+	var image6 = document.getElementById('image6');
+	var image7 = document.getElementById('image7');
+	var image8 = document.getElementById('image8');
+	var image9 = document.getElementById('image9');
+    var image10 = document.getElementById('image10');
+    var image11 = document.getElementById('image11');
+    var image12 = document.getElementById('image12');
+    var image13 = document.getElementById('image13');
+    var image14 = document.getElementById('image14');
+    var image15 = document.getElementById('image15');
+    var image16 = document.getElementById('image16');
+    count = count + 1;
+    var courtVar = document.getElementById('count');
+    courtVar.innerHTML = "Count: " + count;
+	if (image1.src.match("White.jpg") && image2.src.match("White.jpg") && 
+		image3.src.match("White.jpg") && image4.src.match("White.jpg") && 
+		image5.src.match("White.jpg") && image6.src.match("White.jpg") && 
+		image7.src.match("White.jpg") && image8.src.match("White.jpg") && 
+		image9.src.match("White.jpg") && image10.src.match("White.jpg") && 
+        image11.src.match("White.jpg") && image12.src.match("White.jpg") && 
+        image13.src.match("White.jpg") && image14.src.match("White.jpg") && 
+        image15.src.match("White.jpg") && image16.src.match("White.jpg")) {
+		alert("Fuck!");
+		reset();
+	} 
+}
+</script>
+
+</body>
+</html>

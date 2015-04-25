@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <p><h1 id="heading" align = "center">Black And White</h1></p>
+
+    </head>
+
+<style>
+    #heading{
+        font-family:"Trebuchet MS", Helvetica, sans-serif;
+        font-size:40px;
+        font-weight:bold;
+    }
+	.container{
+        width: 350px;
+        background: url(square.png) no-repeat center top #000;
+        margin: 0 auto;
+        height: 350px;
+        background-color: #f8f8f8;
+        /*min-width: 350px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 25%;*/
+	}
+	.row{
+        margin-left: 11px;
+        position: relative;
+        margin-bottom: 1px;
+        bottom: -15px;
+	}
+	.cell{
+        display: inline;
+		margin-left: 1px;
+		margin-right: 1px;
+	}
+    .button{
+        margin-right: auto;
+        margin-left: auto;
+        padding: 5px;
+        background-color: #f7e9be;
+        border: 3px ;
+        color: #000000;
+
+        -moz-box-shadow: 0px 1px 0px 0px #1c1b18;
+        -webkit-box-shadow: 0px 1px 0px 0px #1c1b18;
+        box-shadow: 0px 1px 0px 0px #1c1b18;
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f7e9be), color-stop(1, #d9b77b));
+        background:-moz-linear-gradient(top, #f7e9be 5%, #d9b77b 100%);
+        background:-webkit-linear-gradient(top, #f7e9be 5%, #d9b77b 100%);
+        background:-o-linear-gradient(top, #f7e9be 5%, #d9b77b 100%);
+        background:-ms-linear-gradient(top, #f7e9be 5%, #d9b77b 100%);
+        background:linear-gradient(to bottom, #f7e9be 5%, #d9b77b 100%);
+        -moz-border-radius:15px;
+        -webkit-border-radius:15px;
+        border-radius:10px;
+        border:1px solid #333029;
+        display:inline-block;
+        color:#505739;
+        font-family:arial;
+        font-size:15px;
+        font-weight:bold;
+
+    }
+    #count {
+        text-align: center;
+    }
+    #menu{
+        width: 165px;
+    }
+    #reset{
+        width: 165px;
+    }
+    .buttonSet{
+        display: block;
+    }
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+</style>
+
+<body bgcolor="#f8f8f8">
+
+<h4 id = "count">Count: 0</h4>
+<div class="buttonSet" id="resetReturn" style="text-align:center">
+    <a href = "ChooseLevel.html">
+        <button class="button" id="menu">Menu</button>
+    </a>
+    <button class="button" id = "reset" onclick = "reset()">Reset</button>
+</div>
+<p></p>
+<div class = "container" id = "container">
+	<div class = "row">
+		<div class = "cell">
+			<img id="image1" src="Gray.jpg" width="60" height="60">
+		</div>
+        <div class = "cell">
+            <img id="image2" onclick = "changeImage('image2', 'image3')" src="Black.jpg" src="Gray.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image3" onclick = "changeImage('image2', 'image3', 'image4', 'image8')" src="Black.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image4" onclick = "changeImage('image4', 'image3')" src="Black.jpg" src="Gray.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image5" src="Gray.jpg" width="60" height="60">
+        </div>
+	</div>
+	<div class = "row">
+        <div class = "cell">
+            <img id="image6" src="Gray.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image7" src="Gray.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image8" onclick = "changeImage('image13', 'image8', 'image3')" src="Black.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image9" src="Gray.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image10" src="Gray.jpg" width="60" height="60">
+        </div>
+	</div>
+	<div class = "row">
+        <div class = "cell">
+            <img id="image11" src="Gray.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image12" onclick = "changeImage('image12', 'image13')" src="Black.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image13" onclick = "changeImage('image13', 'image12', 'image14', 'image18', 'image8')" src="Black.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image14" onclick = "changeImage('image13', 'image14')" src="Black.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image15" src="Gray.jpg" width="60" height="60">
+        </div>
+	</div>
+    <div class = "row">
+        <div class = "cell">
+            <img id="image16" src="Gray.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image17" src="Gray.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image18" onclick = "changeImage('image18', 'image13', 'image23')" src="Black.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image19" src="Gray.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image20" src="Gray.jpg" width="60" height="60">
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "cell">
+            <img id="image21" src="Gray.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image22" onclick = "changeImage('image22', 'image23')" src="Black.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image23" onclick = "changeImage('image22', 'image23', 'image24', 'image18')" src="Black.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image24" onclick = "changeImage('image24', 'image23')" src="Black.jpg" width="60" height="60">
+        </div>
+        <div class = "cell">
+            <img id="image25" src="Gray.jpg" width="60" height="60">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var count = 0;
+
+function reset() {
+    image2.src = "Black.jpg";
+    image3.src = "Black.jpg";
+    image4.src = "Black.jpg";
+    image8.src = "Black.jpg";
+    image12.src = "Black.jpg";
+    image13.src = "Black.jpg";
+    image14.src = "Black.jpg";
+    image18.src = "Black.jpg";
+    image22.src = "Black.jpg";
+    image23.src = "Black.jpg";
+    image24.src = "Black.jpg";
+    count = 0;
+    var courtVar = document.getElementById('count');
+    courtVar.innerHTML = "Count: " + count;
+}
+
+function changeImage() {
+    var i = 0;
+    for (i = 0; i < arguments.length; i++){
+        var image = document.getElementById(arguments[i]);
+        if (image.src.match("White.jpg")) {
+            image.src = "Black.jpg";
+        } else {
+            image.src = "White.jpg";
+        }
+    }
+    checkWin();
+}
+function checkWin() {
+    var image2 = document.getElementById('image2');
+	var image3 = document.getElementById('image3');
+    var image4 = document.getElementById('image4');
+	var image8 = document.getElementById('image8');
+	var image12 = document.getElementById('image12');
+	var image13 = document.getElementById('image13');
+	var image14 = document.getElementById('image14');
+	var image18 = document.getElementById('image15');
+    var image22 = document.getElementById('image17');
+    var image23 = document.getElementById('image18');
+    count = count + 1;
+    var courtVar = document.getElementById('count');
+    courtVar.innerHTML = "Count: " + count;
+	if (image2.src.match("White.jpg") && image3.src.match("White.jpg") && 
+		image4.src.match("White.jpg") && image8.src.match("White.jpg") && 
+		image12.src.match("White.jpg") && image13.src.match("White.jpg") && 
+		image14.src.match("White.jpg") && image18.src.match("White.jpg") && 
+        image22.src.match("White.jpg") && image23.src.match("White.jpg") && 
+        image24.src.match("White.jpg")) {
+		alert("Fuck!");
+		reset();
+	} 
+}
+</script>
+
+</body>
+</html>
